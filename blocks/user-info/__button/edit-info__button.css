@@ -1,0 +1,27 @@
+.edit-info__button {
+  position: absolute;
+  top: 168px;
+  left: 187px;
+  width: 38px;
+  height: 18px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 980px) {
+  .edit-info__button {
+    position: static;
+    margin-bottom: 40px;
+  }
+}
+
+.edit-info__button:hover {
+  background-color: white;
+  color: black;
+}
