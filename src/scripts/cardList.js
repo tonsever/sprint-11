@@ -1,4 +1,4 @@
-class CardList {
+export class CardList {
   constructor(placesList, callbackCard, sendPicture) {
     this.placesList = placesList;
     this.callbackCard = callbackCard;

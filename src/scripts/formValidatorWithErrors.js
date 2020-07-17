@@ -1,4 +1,5 @@
-class FormValidatorWithError extends FormValidator {
+import {FormValidator} from './formValidator.js';
+export class FormValidatorWithError extends FormValidator {
   constructor(form) {
     super(form);
     this.switchError = this.switchError.bind(this);
