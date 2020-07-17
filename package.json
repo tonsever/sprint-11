@@ -1,7 +1,7 @@
 {
   "name": "sprint_11",
   "version": "0.0.1",
-  "description": "",
+  "description": "configuring webpack",
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist dist && cross-env NODE_ENV=production webpack --mode production",
