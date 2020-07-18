@@ -1,4 +1,4 @@
-class Card {
+export class Card {
   constructor(link, name, sendToPopup) {
     this.link = link;
     this.name = name;

@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css" />
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="./images/logo.svg" alt="mesto logo" class="logo" />
+      <img src="<%=require('./images/logo.svg').default%>" alt="mesto logo" class="logo" />
     </header>
     <div class="profile root__section">
       <div class="user-info">
@@ -28,7 +28,7 @@
     <div class="places-list root__section"></div>
     <div class="popup popup_new">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close popup__close_new" />
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close_new" />
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="new">
           <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название" />
@@ -40,7 +40,7 @@
     </div>
     <div class="popup popup_edit">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close popup__close_edit" />
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close_edit" />
         <h3 class="popup__title">Редактировать профиль</h3>
         <form class="popup__form" name="edit">
           <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Имя" />
@@ -53,11 +53,12 @@
     </div>
     <div class="popup popup_picture">
       <div class="popup__picture">
-        <img src="./images/close.svg" alt="" class="popup__close popup__close_picture" />
+        <img src="<%=require('./images/close.svg').default%>" alt="" class="popup__close popup__close_picture" />
         <img class="popup__image" alt="" id="big_picture" />
       </div>
     </div>
   </div>
+  <!--
   <script src="./scripts/api.js"></script>
   <script src="./scripts/card.js"></script>
   <script src="./scripts/cardList.js"></script>
@@ -67,7 +68,8 @@
   <script src="./scripts/userInfo.js"></script>
   <script src="./scripts/formValidator.js"></script>
   <script src="./scripts/formValidatorWithErrors.js"></script>
-  <script src="./scripts/script.js"></script>
+  <script src="./scripts/index.js"></script> 
+  <script src="<%= htmlWebpackPlugin.files.js %>"></script>-->
 </body>
 
 </html>

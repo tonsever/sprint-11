@@ -1,3 +1,14 @@
+import { Api } from './scripts/api.js';
+import { Card } from './scripts/card.js';
+import { CardList } from './scripts/cardList.js';
+import { Popup } from './scripts/popup.js';
+import { PopupForm } from './scripts/popupForm.js';
+import { PopupImage } from './scripts/popupImage.js';
+import { UserInfo } from './scripts/userInfo.js';
+import { FormValidator } from './scripts/formValidator.js';
+import { FormValidatorWithError } from './scripts/formValidatorWithErrors.js';
+import "./pages/index.css";
+
 const root = document.querySelector('.root');
 const placesList = root.querySelector('.places-list');
 const popupNew = root.querySelector('.popup_new');
@@ -11,9 +22,11 @@ const nameInfo = root.querySelector('.user-info__name');
 const jobInfo = root.querySelector('.user-info__job');
 const photoInfo = root.querySelector('.user-info__photo');
 
+const API_URL = NODE_ENV === 'production' ? 'https://praktikum.tk' : 'http://praktikum.tk';
+
 const config = {
-  urlUser: 'https://praktikum.tk/cohort11/users/me',
-  urlCards: 'https://praktikum.tk/cohort11/cards',
+  urlUser: `${API_URL}/cohort11/users/me`,
+  urlCards: `${API_URL}/cohort11/cards`,
   headers: {
     authorization: '19913bd6-c98f-45a1-ae54-95f6284f3235',
     'Content-Type': 'application/json'

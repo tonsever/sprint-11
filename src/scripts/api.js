@@ -1,4 +1,4 @@
-class Api {
+export class Api {
   constructor(config) {
     this.urlUser = config.urlUser;
     this.urlCards = config.urlCards;
