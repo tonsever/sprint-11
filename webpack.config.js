@@ -27,11 +27,11 @@ module.exports = {
         use: [
           (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
           {
-            loader:'css-loader',
+            loader: 'css-loader',
             options: {
-                importLoaders: 2
-            } 
-        },
+              importLoaders: 2
+            }
+          },
           'postcss-loader'
         ] // к этим файлам нужно применить пакеты, которые мы уже установили
       },
@@ -40,8 +40,17 @@ module.exports = {
         use: 'file-loader?name=./fonts/[name].[ext]'
       },
       {
-        test: /\.(jpg|jpeg|png|svg|webp)$/,
-        use: 'file-loader?name=./images/[name].[ext]&esModule=false'
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true, // webpack@2.x and newer
+            },
+          },
+        ],
       }
     ]
   },
