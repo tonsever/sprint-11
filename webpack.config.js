@@ -25,15 +25,19 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+          isDev ? 'style-loader'
+            : {
+              loader: MiniCssExtractPlugin.loader,
+              options: { publicPath: '../', },
+            },
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 2
-            }
+              importLoaders: 2,
+            },
           },
-          'postcss-loader'
-        ] // к этим файлам нужно применить пакеты, которые мы уже установили
+          'postcss-loader',
+        ]
       },
       {
         test: /\.(eot|woff|woff2|ttf)$/,
@@ -46,8 +50,8 @@ module.exports = {
           {
             loader: 'image-webpack-loader',
             options: {
-              bypassOnDebug: true, // webpack@1.x
-              disable: true, // webpack@2.x and newer
+              bypassOnDebug: true, 
+              disable: true, 
             },
           },
         ],
